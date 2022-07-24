@@ -1,0 +1,69 @@
+import module370 from '@babel/runtime/helpers/defineEnumerableProperties';
+import React from 'react';
+import module2 from './2';
+
+var module284 = require('./284'),
+  module51 = require('./51');
+
+function u(t, o) {
+  var n = Object.keys(t);
+
+  if (Object.getOwnPropertySymbols) {
+    var c = Object.getOwnPropertySymbols(t);
+    if (o)
+      c = c.filter(function (o) {
+        return Object.getOwnPropertyDescriptor(t, o).enumerable;
+      });
+    n.push.apply(n, c);
+  }
+
+  return n;
+}
+
+var s = module2.Animated.Text,
+  b = module2.StyleSheet.create({
+    title: (function (t) {
+      for (var n = 1; n < arguments.length; n++) {
+        var c = null != arguments[n] ? arguments[n] : {};
+        if (n % 2)
+          u(Object(c), true).forEach(function (n) {
+            module284.default(t, n, c[n]);
+          });
+        else if (Object.getOwnPropertyDescriptors) Object.defineProperties(t, Object.getOwnPropertyDescriptors(c));
+        else
+          u(Object(c)).forEach(function (o) {
+            Object.defineProperty(t, o, Object.getOwnPropertyDescriptor(c, o));
+          });
+      }
+
+      return t;
+    })(
+      {},
+      module2.Platform.select({
+        ios: {
+          fontSize: 17,
+          fontWeight: '600',
+          color: 'rgba(0, 0, 0, .9)',
+          marginHorizontal: 16,
+        },
+        android: {
+          fontSize: 20,
+          fontWeight: '500',
+          color: 'rgba(0, 0, 0, .9)',
+          marginHorizontal: 16,
+        },
+        default: {
+          fontSize: 18,
+          fontWeight: '400',
+          color: '#3c4043',
+        },
+      })
+    ),
+  }),
+  O = function (t) {
+    var o = t.style,
+      f = module370(t, ['style']);
+    return <s />;
+  };
+
+export default O;
